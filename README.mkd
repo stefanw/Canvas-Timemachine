@@ -1,0 +1,24 @@
+TimeMachine-Effect with JavaScript Canvas
+========
+
+Original by Kristian Thornley (thornleyk@cpit.ac.nz) as seen here: http://www.jovianskye.com/archive/jstimemachine-web-based-time-machine-interface
+Original licensed under [Creative Commons Attribution 3.0 New Zealand License](http://creativecommons.org/licenses/by/3.0/nz/).
+
+This is a major rewrite of the original with Canvas instead of divs. It's now modularized and also contains image preloading.
+Subsequently licensed under [Creative Commons Attribution 3.0 Germany License](http://creativecommons.org/licenses/by/3.0/de/)
+
+Use it like this:
+
+    var timemachine = TimeMachine.create(images, ctx, settings, imagesDoneLoadingCallback);
+    /* images is an array, elements can be image URLs or image objects
+     * ctx is the 2D graphics context
+     * optional custom settings, see example
+     * optional callback function when
+     */
+    timemachine.backward();
+    timemachine.forward();
+    timemachine.moveTo(3);
+    
+index.html provides a short example.
+
+You can see it in action on [BPMN Community](http://en.bpmn-community.org/process/timemachine/46/) (there is also a timemachine-related easter egg on the site).

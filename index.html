@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Timemachine Canvas</title>
+        <style type="text/css" media="screen">
+            canvas {
+                display:block;
+            }
+            .item {
+                cursor:pointer;
+                
+            }
+            .item:hover {
+                color:#900;
+            }
+        </style>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body>
+        <h1>Timemachine-Effect in Canvas</h1>
+        <canvas id="canvas" width="400" height="300"></canvas>
+        <div id="loading-div">Loading...</div>
+        <button id="back-in-time">Back in Time</button>
+        <button id="forward-in-time">Forward in Time</button>
+        <ul id="all-items">
+        </ul>
+
+        <script src="timemachine.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" charset="utf-8">
+            $(document).ready(function(){
+                var canvas = document.getElementById("canvas");
+                var ctx = canvas.getContext("2d");
+                var images = ["http://www.google.com/logos/arborday10-hp.gif", "http://www.google.com/logos/holmenkollen2010-hp.gif", "http://www.google.com/logos/delafuente10-hp.gif", "http://www.google.com/logos/mother10-hp.gif", "http://www.google.com/logos/piday10-hp.gif", "http://www.google.com/logos/hungariannational10-hp.gif", "http://www.google.com/logos/stpatricksday10-hp.gif", "http://www.google.com/logos/persiannewyear10-hp.gif"];
+
+                /* These are all possible settings: */
+                var settings = {
+                    speed: 0,
+                    offsetTop: 40,
+                    delta_z: 8,
+                    decay_constant: 0.5,
+                    size_ratio : 0.75
+                };
+                var position = 0;
+                var imagesDoneLoading = function(tm, successCount, failCount){
+                    if (failCount > 0){
+                        alert("Some images failed to load");
+                    }
+                    $("#loading-div").hide();
+                    for(var i=0;i<images.length;i++){
+                        $("#all-items").append('<li id="item-'+i+'" class="item">Item '+i+'</li>');
+                    }
+                    $(".item").click(function(){
+                        tm.moveTo(parseInt($(this).attr("id").split("-")[1]));
+                    });
+                };
+                var timemachine = TimeMachine.create(images, ctx, settings, imagesDoneLoading);
+                $("#forward-in-time").click(function(){
+                    if(position > 0){
+                        timemachine.forward();
+                        position -=1;
+                    }
+                });
+                $("#back-in-time").click(function(){
+                    if(position < images.length-1){
+                        timemachine.backward();
+                        position += 1;
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
