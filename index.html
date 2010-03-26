@@ -52,7 +52,9 @@
                         $("#all-items").append('<li id="item-'+i+'" class="item">Item '+i+'</li>');
                     }
                     $(".item").click(function(){
-                        tm.moveTo(parseInt($(this).attr("id").split("-")[1]));
+                        position = parseInt($(this).attr("id").split("-")[1]);
+                        tm.moveTo(position);
+                        position = images.length - 1 - position;
                     });
                 };
                 var timemachine = TimeMachine.create(images, ctx, settings, imagesDoneLoading);
