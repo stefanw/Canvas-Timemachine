@@ -1,4 +1,4 @@
-TimeMachine Effect with JavaScript Canvas
+Timemachine Effect with Canvas
 ========
 
 Original by Kristian Thornley (thornleyk@cpit.ac.nz) [as seen here](http://www.jovianskye.com/archive/jstimemachine-web-based-time-machine-interface) and [featured on Ajaxian](http://ajaxian.com/archives/js-time-machine).
@@ -19,6 +19,6 @@ Use it like this:
     timemachine.forward();
     timemachine.moveTo(3);
     
-index.html provides a short example.
+index.html provides a short example which is also online at http://stefanwehrmeyer.com/_projects/timemachine/
 
 You can see it in action on [BPMN Community](http://en.bpmn-community.org/process/timemachine/46/) (there is also a timemachine-related easter egg on the site).
