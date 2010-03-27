@@ -10,15 +10,15 @@ Licensed under [Creative Commons Attribution 3.0 Germany License](http://creativ
 Use it like this:
 
     var timemachine = TimeMachine.create(images, ctx, settings, imagesDoneLoadingCallback);
-    /* images is an array, elements can be image URLs or image objects
+    /* images is an array, elements can be URLs of images or image objects
      * ctx is the 2D graphics context
      * optional custom settings, see example
-     * optional callback function when
+     * optional callback function when image loading is done
      */
     timemachine.backward();
     timemachine.forward();
     timemachine.moveTo(3);
     
-index.html provides a short example which is also online at http://stefanwehrmeyer.com/_projects/timemachine/
+index.html provides a short example ([online version here](http://stefanwehrmeyer.com/_projects/timemachine/)).
 
 You can see it in action on [BPMN Community](http://en.bpmn-community.org/process/timemachine/46/) (there is also a timemachine-related easter egg on the site).
