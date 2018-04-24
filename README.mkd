@@ -19,6 +19,4 @@ Use it like this:
     timemachine.forward();
     timemachine.moveTo(3);
     
-index.html provides a short example ([online version here](http://stefanwehrmeyer.com/_projects/timemachine/)).
-
-You can see it in action on [BPMN Community](http://en.bpmn-community.org/process/timemachine/46/) (there is also a timemachine-related easter egg on the site).
+index.html provides a short example ([online version here](http://stefanw.github.io/Canvas-Timemachine/)).
